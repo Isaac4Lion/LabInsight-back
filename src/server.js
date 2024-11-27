@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors';
 import routerUsuarios from './routers/usuarios_routes.js';
+import routerSolicitudes from './routers/solicitudes_routes.js';
 
 const app = express()
 dotenv.config()
@@ -19,6 +20,7 @@ app.get('/',(req,res)=>{
     res.send("Server on")
 })
 app.use('/api', routerUsuarios)
+app.use('/api', routerSolicitudes)
 
 app.use((req,res)=>res.status(404).send("Endpoint no encontrado - 404"))
 
