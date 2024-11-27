@@ -14,9 +14,9 @@ router.post("/login", login);
 router.post("/registro", registro);
 router.get("/usuarios", listarUsuarios);
 
-router.put('/usuario/actualizarpassword',actualizarPassword)
+router.put('/usuario/actualizar-password',actualizarPassword)
+router.put("/usuario/actualizar-email/:id", actualizarEmail);
 router.get("/usuario/:id", detalleUsuario);
-router.put("/usuario/:id", actualizarEmail);
 router.put("/usuario/:id", eliminarUsuario);
 
 export default router
