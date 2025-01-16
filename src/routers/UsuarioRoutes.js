@@ -1,5 +1,6 @@
 import express from 'express';
-import { login, solicitarCambioPassword, cambiarPassword } from '../controllers/ControladorUsuario.js';
+import { login, solicitarCambioPassword, cambiarPassword, obtenerUsuarios } from '../controllers/ControladorUsuario.js';
+import { verificarAdministrador } from '../middlewares/VerificarRol.js';
 
 const router = express.Router();
 
@@ -10,4 +11,5 @@ router.post('/login', login);
 router.post('/solicitar-cambio-password', solicitarCambioPassword); 
 router.post('/cambiar-password', cambiarPassword);
 
+router.get('/', verificarAdministrador, obtenerUsuarios);
 export default router;

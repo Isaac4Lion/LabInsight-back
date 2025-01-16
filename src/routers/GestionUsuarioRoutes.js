@@ -9,7 +9,7 @@ router.use(verificarToken, verificarAdministrador);
 
 router.post('/crear-o-editar', crearOEditarUsuario);
 
-router.delete('/eliminar', eliminarUsuario);
+router.post('/eliminar', eliminarUsuario);
 
 export default router;
 

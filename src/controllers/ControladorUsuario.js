@@ -109,3 +109,12 @@ export const cambiarPassword = async (req, res) => {
     res.status(500).json({ message: 'Error en el servidor' });
   }
 };
+
+export const obtenerUsuarios = async (req, res) => {
+  try {
+    const usuario = await Usuario.find().select('-password -createdAt -updatedAt -__v');
+    return res.status(200).json(usuario)
+  }catch{
+    return res.status(400).json({msg: 'Ha habido un error'})
+  }
+}
