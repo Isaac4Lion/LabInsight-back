@@ -29,6 +29,17 @@ export const listarLaboratorios = async (req, res) => {
   }
 };
 
+export const obtenerLaboratorio = async (req, res) => {
+  const {id} = req.params
+  try {
+    const laboratorio = await Laboratorio.findById(id);
+    res.json(laboratorio);
+  } catch (error) {
+    console.error(`Error al buscar el laboratorio con id: ${id}, ${error}`);
+    res.status(500).json({ message: `Error al buscar el laboratorio con id: ${id}` });
+  }
+};
+
 export const actualizarLaboratorio = async (req, res) => {
   const { id } = req.params;
   const { codigo, descripcion, numeroComputadoras, numeroProyectores } = req.body;
