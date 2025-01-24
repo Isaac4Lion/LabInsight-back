@@ -9,7 +9,7 @@ export const crearOEditarUsuario = async (req, res) => {
     });
   }
 
-  const rolesPermitidos = ['Administrador', 'PersonalTICs', 'Docente', 'AyudanteServicios', 'Pasante'];
+  const rolesPermitidos = ['Administrador', 'Personal TICs', 'Docente', 'AyudanteServicios', 'Pasante'];
   if (!rolesPermitidos.includes(rol)) {
     return res.status(400).json({ 
       message: 'El rol proporcionado no es válido.' 
