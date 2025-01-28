@@ -118,3 +118,12 @@ export const obtenerUsuarios = async (req, res) => {
     return res.status(400).json({msg: 'Ha habido un error'})
   }
 }
+export const obtenerUsuario = async (req, res) => {
+  const { id } = req.params
+  try {
+    const usuario = await Usuario.findById(id).select('-password -createdAt -updatedAt -__v');
+    return res.status(200).json(usuario)
+  }catch{
+    return res.status(400).json({msg: 'Ha habido un error'})
+  }
+}
