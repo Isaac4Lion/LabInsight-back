@@ -157,7 +157,7 @@ export const obtenerSolicitudesAsignadas = async (req, res) => {
     const usuarioId = req.usuario.id;
 
     const solicitudes = await SolicitudSoporte.find({ asignadoA: usuarioId })
-      .populate('laboratorio', 'codigo descripcion');
+      .populate('laboratorio', 'codigo descripcion').populate('asignadoA', 'nombre apellido');
     res.status(200).json(solicitudes);
   } catch (error) {
     console.error('Error al obtener las solicitudes asignadas:', error);
