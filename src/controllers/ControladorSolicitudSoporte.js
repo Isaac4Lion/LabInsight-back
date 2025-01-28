@@ -60,7 +60,7 @@ export const verHistorialSolicitudes = async (req, res) => {
 
     let solicitudes;
 
-    if (['Administrador', 'Personal TICs', 'Pasante'].includes(rol)) {
+    if (['Administrador', 'Personal TICs'].includes(rol)) {
       solicitudes = await SolicitudSoporte.find()
         .populate('laboratorio', 'codigo descripcion')
         .populate('creadoPor', 'nombre email');
