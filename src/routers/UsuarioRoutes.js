@@ -1,5 +1,5 @@
 import express from 'express';
-import { login, solicitarCambioPassword, cambiarPassword, obtenerUsuarios } from '../controllers/ControladorUsuario.js';
+import { login, solicitarCambioPassword, cambiarPassword, obtenerUsuarios, obtenerUsuario } from '../controllers/ControladorUsuario.js';
 import { verificarAdministrador } from '../middlewares/VerificarRol.js';
 import { verificarToken } from '../middlewares/VerificarToken.js';
 
@@ -13,4 +13,5 @@ router.post('/solicitar-cambio-password', solicitarCambioPassword);
 router.post('/cambiar-password', cambiarPassword);
 
 router.get('/', verificarToken, verificarAdministrador, obtenerUsuarios);
+router.get('/:id', verificarToken, verificarAdministrador, obtenerUsuario);
 export default router;
