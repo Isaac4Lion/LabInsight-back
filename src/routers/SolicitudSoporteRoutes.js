@@ -25,7 +25,7 @@ router.patch(
   cambiarEstadoSolicitud
 );
 router.get('/historial', verificarToken, verHistorialSolicitudes);
-router.get('/filtrar', verificarToken,verificarAdministrador, filtrarSolicitudes);
+router.get('/filtrar', verificarToken,verificarRoles(['Administrador', 'Personal TICs']), filtrarSolicitudes);
 router.post('/asignar', verificarToken,verificarAdministrador, asignarSolicitud);
 router.get('/asignadas', 
   verificarToken,
