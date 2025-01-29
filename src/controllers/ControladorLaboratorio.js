@@ -21,7 +21,7 @@ export const crearLaboratorio = async (req, res) => {
 
 export const listarLaboratorios = async (req, res) => {
   try {
-    const laboratorios = (await Laboratorio.find()).sort({ codigo: 1 });
+    const laboratorios = (await Laboratorio.find()).sort({ codigo: 1 }).lean();
     res.json(laboratorios);
   } catch (error) {
     console.error('Error al listar laboratorios:', error);
