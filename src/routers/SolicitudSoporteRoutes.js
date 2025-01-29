@@ -21,7 +21,6 @@ router.post('/', verificarToken, crearSolicitudSoporte);
 router.patch(
   '/:id/estado',
   verificarToken,
-  verificarRoles(['Administrador', 'Personal TICs','Pasante']),
   cambiarEstadoSolicitud
 );
 router.get('/historial', verificarToken, verHistorialSolicitudes);
