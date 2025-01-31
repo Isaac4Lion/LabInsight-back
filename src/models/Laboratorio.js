@@ -24,10 +24,7 @@ const laboratorioSchema = new mongoose.Schema({
     min: 0,
   },
 }, {
-  timestamps: {
-      createdAt: () => moment().tz('America/Guayaquil').toDate(),
-      updatedAt: () => moment().tz('America/Guayaquil').toDate(),
-    }
+  timestamps: true
 });
 
 const Laboratorio = mongoose.model('Laboratorio', laboratorioSchema);

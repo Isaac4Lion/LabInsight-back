@@ -19,10 +19,7 @@ const observacionSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: {
-        createdAt: () => moment().tz('America/Guayaquil').toDate(),
-        updatedAt: () => moment().tz('America/Guayaquil').toDate(),
-      }
+    timestamps: true
   }
 );
 

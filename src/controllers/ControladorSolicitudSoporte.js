@@ -1,6 +1,7 @@
 import SolicitudSoporte from '../models/SolicitudSoporte.js';
 import Laboratorio from '../models/Laboratorio.js';
 import Usuario from '../models/Usuario.js';
+import moment from 'moment-timezone';
 
 export const crearSolicitudSoporte = async (req, res) => {
   const { titulo, descripcion, laboratorio, equipo } = req.body;
@@ -18,6 +19,8 @@ export const crearSolicitudSoporte = async (req, res) => {
       laboratorio,
       equipo,
       creadoPor: req.usuario.id,
+      createdAt: moment.tz('America/Guayaquil').toDate(),
+      updatedAt: moment.tz('America/Guayaquil').toDate(),
     });
 
     const solicitudGuardada = await nuevaSolicitud.save();

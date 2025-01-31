@@ -37,10 +37,7 @@ const solicitudSoporteSchema = new mongoose.Schema({
     default: null,  
   },
 }, {
-  timestamps: {
-    createdAt: () => moment().tz('America/Guayaquil').toDate(),
-    updatedAt: () => moment().tz('America/Guayaquil').toDate(),
-  },
+  timestamps: true
 });
 
 

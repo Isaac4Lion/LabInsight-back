@@ -18,10 +18,7 @@ const usuariosSchema = new Schema({
         default:true
     },
 },{
-    timestamps: {
-        createdAt: () => moment().tz('America/Guayaquil').toDate(),
-        updatedAt: () => moment().tz('America/Guayaquil').toDate(),
-      }
+    timestamps: true
 })
 
 // Método para cifrar el password del usuario
