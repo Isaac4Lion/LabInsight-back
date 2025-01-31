@@ -13,15 +13,12 @@ export const crearSolicitudSoporte = async (req, res) => {
       return res.status(404).json({ message: 'Laboratorio no encontrado' });
     }
 
-    console.log(moment.tz('America/Guayaquil').toDate());
     const nuevaSolicitud = new SolicitudSoporte({
       titulo,
       descripcion,
       laboratorio,
       equipo,
       creadoPor: req.usuario.id,
-      createdAt: moment.tz('America/Guayaquil').toDate(),
-      updatedAt: moment.tz('America/Guayaquil').toDate(),
     });
 
     const solicitudGuardada = await nuevaSolicitud.save();
