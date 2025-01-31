@@ -1,3 +1,4 @@
+import moment from 'moment-timezone';
 import mongoose from 'mongoose';
 
 const laboratorioSchema = new mongoose.Schema({
@@ -23,7 +24,9 @@ const laboratorioSchema = new mongoose.Schema({
     min: 0,
   },
 }, {
-  timestamps: true,
+  timestamps: {
+      currentTime: () => moment().tz('America/Ecuador').toDate(),
+    }
 });
 
 const Laboratorio = mongoose.model('Laboratorio', laboratorioSchema);

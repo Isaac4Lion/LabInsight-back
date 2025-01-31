@@ -20,7 +20,9 @@ const solicitudesSchema = new Schema({
         trim:true
     }
 },{
-    timestamps:true
+    timestamps: {
+        currentTime: () => moment().tz('America/Ecuador').toDate(),
+      }
 })
 
 export default model('Solicitud',solicitudesSchema)

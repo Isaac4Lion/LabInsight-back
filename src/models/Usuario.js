@@ -29,7 +29,9 @@ const usuarioSchema = new mongoose.Schema({
     required: true,
   },
 }, {
-  timestamps: true,
+  timestamps: {
+      currentTime: () => moment().tz('America/Ecuador').toDate(),
+    }
 });
 
 usuarioSchema.pre('save', async function (next) {

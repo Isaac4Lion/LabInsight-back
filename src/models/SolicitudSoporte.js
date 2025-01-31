@@ -1,3 +1,4 @@
+import moment from 'moment-timezone';
 import mongoose from 'mongoose';
 
 const solicitudSoporteSchema = new mongoose.Schema({
@@ -36,7 +37,9 @@ const solicitudSoporteSchema = new mongoose.Schema({
     default: null,  
   },
 }, {
-  timestamps: true,
+  timestamps: {
+    currentTime: () => moment().tz('America/Ecuador').toDate(),
+  },
 });
 
 
