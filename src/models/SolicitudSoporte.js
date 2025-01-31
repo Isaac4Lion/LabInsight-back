@@ -36,16 +36,8 @@ const solicitudSoporteSchema = new mongoose.Schema({
     ref: 'Usuario', 
     default: null,  
   },
-  createdAt: {
-    type: Date,
-    default: moment.tz('America/Guayaquil').clone().utcOffset(-5).toDate(),
-  },
-  updatedAt: {
-    type: Date,
-    default: moment.tz('America/Guayaquil').clone().utcOffset(-5).toDate(),
-  },
-}, {
-  timestamps: false
+  }, {
+  timestamps: true
 });
 
 
