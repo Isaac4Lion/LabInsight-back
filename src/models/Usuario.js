@@ -30,7 +30,7 @@ const usuarioSchema = new mongoose.Schema({
   },
 }, {
   timestamps: {
-      currentTime: () => moment().tz('America/Ecuador').toDate(),
+      currentTime: () => moment().tz('America/Guayaquil').toDate(),
     }
 });
 
