@@ -13,6 +13,7 @@ export const crearSolicitudSoporte = async (req, res) => {
       return res.status(404).json({ message: 'Laboratorio no encontrado' });
     }
 
+    console.log(moment.tz('America/Guayaquil').format('YYYY-MM-DD HH:mm:ss'));
     const nuevaSolicitud = new SolicitudSoporte({
       titulo,
       descripcion,

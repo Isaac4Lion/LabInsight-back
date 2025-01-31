@@ -38,11 +38,11 @@ const solicitudSoporteSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: moment.tz('America/Guayaquil').toDate(),
+    default: moment.tz('America/Guayaquil').clone().utcOffset(-5).toDate(),
   },
   updatedAt: {
     type: Date,
-    default: moment.tz('America/Guayaquil').toDate(),
+    default: moment.tz('America/Guayaquil').clone().utcOffset(-5).toDate(),
   },
 }, {
   timestamps: false
